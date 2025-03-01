@@ -45,6 +45,17 @@ android_app_import {
 }
 
 android_app_import {
+	name: "TimeService",
+	owner: "smartisan",
+	apk: "proprietary/vendor/app/TimeService/TimeService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	soc_specific: true,
+}
+
+android_app_import {
 	name: "QtiTelephonyService",
 	owner: "smartisan",
 	apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
@@ -134,6 +145,15 @@ dex_import {
 	owner: "smartisan",
 	jars: ["proprietary/system_ext/framework/qcrilhook.jar"],
 	system_ext_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "manifest_android.hardware.drm@1.3-service.widevine",
+	owner: "smartisan",
+	src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
 }
 
 prebuilt_etc_xml {
